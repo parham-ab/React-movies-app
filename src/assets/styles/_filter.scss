@@ -1,0 +1,20 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 100px 0;
+  button {
+    padding: 3px 10px;
+    border-radius: 100px;
+    color: #404040;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+.active {
+  padding: 3px 10px;
+  border-radius: 100px;
+  background-color: #1f8bd7;
+  color: #fff !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

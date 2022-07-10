@@ -29,7 +29,10 @@ const App = () => {
         activeGenre={activeGenre}
         setActiveGenre={setActiveGenre}
       />
-      {movieData && filtered.map((item) => <Movie key={item.id} data={item} />)}
+      <div className="container">
+        {movieData &&
+          filtered.map((item) => <Movie key={item.id} data={item} />)}
+      </div>
     </div>
   );
 };

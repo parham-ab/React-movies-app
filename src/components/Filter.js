@@ -14,10 +14,25 @@ const Filter = ({ setFiltered, movieData, activeGenre, setActiveGenre }) => {
   }, [activeGenre]);
 
   return (
-    <div>
-      <button onClick={() => setActiveGenre(0)}>All</button>
-      <button onClick={() => setActiveGenre(35)}>Action</button>
-      <button onClick={() => setActiveGenre(28)}>Comedy</button>
+    <div className="filter">
+      <button
+        className={`${activeGenre === 0 && "active"}`}
+        onClick={() => setActiveGenre(0)}
+      >
+        All
+      </button>
+      <button
+        className={`${activeGenre === 35 && "active"}`}
+        onClick={() => setActiveGenre(35)}
+      >
+        Action
+      </button>
+      <button
+        className={`${activeGenre === 28 && "active"}`}
+        onClick={() => setActiveGenre(28)}
+      >
+        Comedy
+      </button>
     </div>
   );
 };
