@@ -5,3 +5,12 @@
   justify-content: center;
   gap: 50px;
 }
+.pagination-container {
+  display: flex !important;
+  justify-content: center !important;
+  background-color: #dae9ff !important;
+  width: fit-content !important;
+  margin: 90px auto !important;
+  border-radius: 10px !important;
+  padding: 18px !important;
+}

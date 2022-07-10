@@ -14,12 +14,21 @@ const Movie = ({ data }) => {
     <div>
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
-            alt="green iguana"
-          />
+          {data.backdrop_path ? (
+            <CardMedia
+              component="img"
+              height="140"
+              image={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
+              alt="green iguana"
+            />
+          ) : (
+            <CardMedia
+              component="img"
+              height="140"
+              image={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+              alt="green iguana"
+            />
+          )}
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {data.title}
