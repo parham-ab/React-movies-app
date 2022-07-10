@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 // components
 import Movie from "./components/Movie";
+import Filter from "./components/Filter";
 
 const App = () => {
   const [movieData, setMovieData] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [activeGenre, setActiveGenre] = useState(0);
+
   useEffect(() => {
     const GetMoviesApi = async () => {
       const data = await fetch(
@@ -11,14 +15,21 @@ const App = () => {
       );
       const movies = await data.json();
       setMovieData(movies.results);
+      setFiltered(movies.results);
     };
     GetMoviesApi();
   }, []);
 
   return (
     <div>
-      {movieData &&
-        movieData.map((item) => <Movie key={item.id} data={item} />)}
+      <Filter
+        setFiltered={setFiltered}
+        movieData={movieData}
+        setMovieData={setMovieData}
+        activeGenre={activeGenre}
+        setActiveGenre={setActiveGenre}
+      />
+      {movieData && filtered.map((item) => <Movie key={item.id} data={item} />)}
     </div>
   );
 };
