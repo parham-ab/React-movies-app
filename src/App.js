@@ -6,6 +6,7 @@ import Pagination from "@mui/material/Pagination";
 import Movie from "./components/Movie";
 import Filter from "./components/Filter";
 import Footer from "./components/common/Footer";
+import IsLoading from "./components/common/IsLoading";
 // animation effect
 import { motion } from "framer-motion";
 
@@ -14,6 +15,7 @@ const App = () => {
   const [filtered, setFiltered] = useState([]);
   const [activeGenre, setActiveGenre] = useState(0);
   const [pageNum, setPageNum] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
   // Pagination
   const handlePagination = (e, val) => {
     setPageNum(val);
@@ -27,9 +29,13 @@ const App = () => {
       const movies = await data.json();
       setMovieData(movies.results);
       setFiltered(movies.results);
+      setIsLoading(false);
     };
     GetMoviesApi();
   }, [pageNum]);
+
+  if (isLoading) return <IsLoading />;
+  // if (isLoading) return <p>zzxc</p>;
 
   return (
     <div>
