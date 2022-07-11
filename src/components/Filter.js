@@ -34,12 +34,14 @@ const Filter = ({
           Action
         </button>
       )}
-      <button
-        className={`${activeGenre === 35 && "active"}`}
-        onClick={() => setActiveGenre(35)}
-      >
-        Comedy
-      </button>
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 35 && "active"}`}
+          onClick={() => setActiveGenre(35)}
+        >
+          Comedy
+        </button>
+      )}
       {!filtered.length == 0 && (
         <button
           className={`${activeGenre === 12 && "active"}`}
