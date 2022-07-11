@@ -1,3 +1,24 @@
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(158, 158, 158);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(187, 187, 187);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgb(207, 207, 207);
+}
+.box_shadow {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+// home page styles
 .container {
   display: flex;
   align-items: flex-start;
@@ -12,5 +33,6 @@
   width: fit-content !important;
   margin: 90px auto !important;
   border-radius: 10px !important;
-  padding: 18px !important;
+  padding: 5px !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }

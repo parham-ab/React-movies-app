@@ -1,0 +1,17 @@
+.footer-container {
+  background-color: #d7d7d7;
+  padding: 5px;
+  div {
+    display: flex;
+    justify-content: center;
+    p {
+      font-size: 17px;
+      span {
+        color: #ff3636;
+      }
+    }
+    a {
+      font-weight: bold;
+    }
+  }
+}

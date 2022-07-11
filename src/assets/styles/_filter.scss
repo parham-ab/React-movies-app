@@ -1,13 +1,17 @@
 .filter {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 7.5px;
   margin: 100px 0;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 100px auto;
   button {
     padding: 3px 10px;
     border-radius: 100px;
     color: #404040;
     font-size: 15px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
     cursor: pointer;
   }
 }
@@ -15,6 +19,6 @@
   padding: 3px 10px;
   border-radius: 100px;
   background-color: #1f8bd7;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   color: #fff !important;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

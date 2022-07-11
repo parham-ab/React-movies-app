@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 
-const Filter = ({ setFiltered, movieData, activeGenre, setActiveGenre }) => {
+const Filter = ({
+  filtered,
+  setFiltered,
+  movieData,
+  activeGenre,
+  setActiveGenre,
+}) => {
   useEffect(() => {
     if (activeGenre === 0) {
       setFiltered(movieData);
       return;
     }
-
     const filtered = movieData.filter((item) =>
       item.genre_ids.includes(activeGenre)
     );
@@ -21,120 +26,157 @@ const Filter = ({ setFiltered, movieData, activeGenre, setActiveGenre }) => {
       >
         All
       </button>
-      <button
-        className={`${activeGenre === 28 && "active"}`}
-        onClick={() => setActiveGenre(28)}
-      >
-        Action
-      </button>
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 28 && "active"}`}
+          onClick={() => setActiveGenre(28)}
+        >
+          Action
+        </button>
+      )}
       <button
         className={`${activeGenre === 35 && "active"}`}
         onClick={() => setActiveGenre(35)}
       >
         Comedy
       </button>
-      <button
-        className={`${activeGenre === 12 && "active"}`}
-        onClick={() => setActiveGenre(12)}
-      >
-        Adventure
-      </button>
-      <button
-        className={`${activeGenre === 16 && "active"}`}
-        onClick={() => setActiveGenre(16)}
-      >
-        Animation
-      </button>
-      <button
-        className={`${activeGenre === 80 && "active"}`}
-        onClick={() => setActiveGenre(80)}
-      >
-        Crime
-      </button>
-      <button
-        className={`${activeGenre === 99 && "active"}`}
-        onClick={() => setActiveGenre(99)}
-      >
-        Documentary
-      </button>
-      <button
-        className={`${activeGenre === 18 && "active"}`}
-        onClick={() => setActiveGenre(18)}
-      >
-        Drama
-      </button>
-      <button
-        className={`${activeGenre === 10571 && "active"}`}
-        onClick={() => setActiveGenre(10571)}
-      >
-        Family
-      </button>
-      <button
-        className={`${activeGenre === 14 && "active"}`}
-        onClick={() => setActiveGenre(14)}
-      >
-        Fantasy
-      </button>
-      <button
-        className={`${activeGenre === 36 && "active"}`}
-        onClick={() => setActiveGenre(36)}
-      >
-        History
-      </button>
-      <button
-        className={`${activeGenre === 27 && "active"}`}
-        onClick={() => setActiveGenre(27)}
-      >
-        Horror
-      </button>
-      <button
-        className={`${activeGenre === 10402 && "active"}`}
-        onClick={() => setActiveGenre(10402)}
-      >
-        Music
-      </button>
-      <button
-        className={`${activeGenre === 9648 && "active"}`}
-        onClick={() => setActiveGenre(9648)}
-      >
-        Mystery
-      </button>
-      <button
-        className={`${activeGenre === 10749 && "active"}`}
-        onClick={() => setActiveGenre(10749)}
-      >
-        Romance
-      </button>
-      <button
-        className={`${activeGenre === 878 && "active"}`}
-        onClick={() => setActiveGenre(878)}
-      >
-        Science Fiction
-      </button>
-      <button
-        className={`${activeGenre === 10770 && "active"}`}
-        onClick={() => setActiveGenre(10770)}
-      >
-        TV Movie
-      </button>
-      <button
-        className={`${activeGenre === 53 && "active"}`}
-        onClick={() => setActiveGenre(53)}
-      >
-        Thriller
-      </button>
-      <button
-        className={`${activeGenre === 10752 && "active"}`}
-        onClick={() => setActiveGenre(10752)}
-      >
-        War
-      </button>
-      <button
-        className={`${activeGenre === 37 && "active"}`}
-        onClick={() => setActiveGenre(37)}
-      >
-        Western
-      </button>
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 12 && "active"}`}
+          onClick={() => setActiveGenre(12)}
+        >
+          Adventure
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 16 && "active"}`}
+          onClick={() => setActiveGenre(16)}
+        >
+          Animation
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 80 && "active"}`}
+          onClick={() => setActiveGenre(80)}
+        >
+          Crime
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 99 && "active"}`}
+          onClick={() => setActiveGenre(99)}
+        >
+          Documentary
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 18 && "active"}`}
+          onClick={() => setActiveGenre(18)}
+        >
+          Drama
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 10571 && "active"}`}
+          onClick={() => setActiveGenre(10571)}
+        >
+          Family
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 14 && "active"}`}
+          onClick={() => setActiveGenre(14)}
+        >
+          Fantasy
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 36 && "active"}`}
+          onClick={() => setActiveGenre(36)}
+        >
+          History
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 27 && "active"}`}
+          onClick={() => setActiveGenre(27)}
+        >
+          Horror
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 10402 && "active"}`}
+          onClick={() => setActiveGenre(10402)}
+        >
+          Music
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 9648 && "active"}`}
+          onClick={() => setActiveGenre(9648)}
+        >
+          Mystery
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 10749 && "active"}`}
+          onClick={() => setActiveGenre(10749)}
+        >
+          Romance
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 878 && "active"}`}
+          onClick={() => setActiveGenre(878)}
+        >
+          Science Fiction
+        </button>
+      )}
+      {/* --- */}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 10770 && "active"}`}
+          onClick={() => setActiveGenre(10770)}
+        >
+          TV Movie
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 53 && "active"}`}
+          onClick={() => setActiveGenre(53)}
+        >
+          Thriller
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 10752 && "active"}`}
+          onClick={() => setActiveGenre(10752)}
+        >
+          War
+        </button>
+      )}
+      {!filtered.length == 0 && (
+        <button
+          className={`${activeGenre === 37 && "active"}`}
+          onClick={() => setActiveGenre(37)}
+        >
+          Western
+        </button>
+      )}
     </div>
   );
 };

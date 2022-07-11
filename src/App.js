@@ -5,6 +5,9 @@ import Pagination from "@mui/material/Pagination";
 // components
 import Movie from "./components/Movie";
 import Filter from "./components/Filter";
+import Footer from "./components/common/Footer";
+// animation effect
+import { motion } from "framer-motion";
 
 const App = () => {
   const [movieData, setMovieData] = useState([]);
@@ -31,23 +34,24 @@ const App = () => {
   return (
     <div>
       <Filter
+        filtered={filtered}
         setFiltered={setFiltered}
         movieData={movieData}
         setMovieData={setMovieData}
         activeGenre={activeGenre}
         setActiveGenre={setActiveGenre}
       />
-      <div className="container">
+      <motion.div layout className="container">
         {movieData &&
           filtered.map((item) => <Movie key={item.id} data={item} />)}
-      </div>
+      </motion.div>
 
       <div className="pagination-container">
-        {/* <button onClick={nextHandler}>next</button> */}
         <Stack spacing={2}>
           <Pagination count={500} onChange={handlePagination} />
         </Stack>
       </div>
+      <Footer />
     </div>
   );
 };
